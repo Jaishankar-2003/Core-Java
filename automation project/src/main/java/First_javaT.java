@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class First_javaT {
-    public static void main (String[] arg) {
+    public static void main (String[] arg) throws InterruptedException {
 
         // To open the chrome using simple driver
 
@@ -42,7 +42,19 @@ public class First_javaT {
         System.out.println(Value);
 
         //clear the text
+        driver.findElement(By.id("clearMe")).clear();
 
+        //confirm edit table in disable
+        boolean enabled = driver.findElement(By.id("noEdit")).isEnabled();
+        System.out.println("enabled");
+
+        //confirm text is read only
+        String read = driver.findElement(By.id("dontwrite")).getAttribute("readonly");
+        System.out.println(read);
+
+        Thread.sleep(3000);
+        // browser close
+        driver.quit();
 
 
     }
