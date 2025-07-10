@@ -12,10 +12,12 @@ public class First_javaT {
         //FirefoxDriver driver =
 
         // load the url
-        driver.get("https://letcode.in/");
+        //driver.get("https://letcode.in/");
+        driver.get("https://letcode.in/login/");
+
 
         //click login button
-        driver.findElement(By.linkText("Explore Workspace")).click();
+        //driver.findElement(By.linkText("Explore Workspace")).click();
 
     }
 
