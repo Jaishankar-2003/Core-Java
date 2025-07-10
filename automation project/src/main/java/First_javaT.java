@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -13,11 +14,24 @@ public class First_javaT {
 
         // load the url
         //driver.get("https://letcode.in/");
-        driver.get("https://letcode.in/login/");
+        //driver.get("https://letcode.in/login/");
+        driver.get("https://letcode.in/edit/");
 
+        // LOCATORS IN SELENIUM
 
         //click login button
         //driver.findElement(By.linkText("Explore Workspace")).click();
+
+        //enter emain find element by name
+        /*driver.findElement(By.xpath("//input[@placeholder='Enter Username']")).sendKeys("mor_2314");
+        driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("83r5^_");
+        driver.findElement(By.xpath("//button['Login']")).click();
+         */
+
+        // HANDLING IN SELENIUM
+
+
+
 
     }
 
