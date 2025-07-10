@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -10,7 +11,12 @@ public class First_javaT {
         ChromeDriver driver = new ChromeDriver();
         //FirefoxDriver driver =
 
-        //
+        // load the url
+        driver.get("https://letcode.in/");
+
+        //click login button
+        driver.findElement(By.linkText("Explore Workspace")).click();
+
     }
 
 }
