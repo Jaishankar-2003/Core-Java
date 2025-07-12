@@ -1,7 +1,7 @@
 public class logic_operat {
     public static void main (String[] args)
     {
-        int x = 100 , y = 200 , z = 300 , a = 21 , b = 56;
+        int x = 100 , y = 200 , z = 300 , a = 21 , b = 56;  //variable declare and initialize
         System.out.println(x==100 && x<y);
         System.out.println( x>y || z<=y);
         System.out.println(x>=z && y!=x);
