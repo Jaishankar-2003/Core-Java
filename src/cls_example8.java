@@ -2,7 +2,7 @@ public class cls_example8
 {
     public static void main (String[] args)
     {
-        double num = 10;
+        double num = 1000;
         if(num > 200)
         {
             num = num + num * 0.60;
