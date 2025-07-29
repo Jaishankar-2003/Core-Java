@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// display the all num in reverse
+// display check num is perfect or not
 
 public class test_6
 {

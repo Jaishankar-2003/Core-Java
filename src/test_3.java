@@ -23,8 +23,6 @@ public class test_3
                     System.out.println(first);
                 }
                 first++;
-
-
             }
         }
         else
@@ -36,8 +34,6 @@ public class test_3
                     System.out.println(first);
                 }
                 first--;
-
-
             }
         }
     }

@@ -8,26 +8,48 @@ public class test_2
     {
         Scanner scn = new Scanner(System.in);
 
-        System.out.println("enter first");
+//        System.out.println("enter first");
+//        int first = scn.nextInt();
+//        System.out.println("enter second");
+//        int end = scn.nextInt();
+//
+//       if (first > end )
+//       {
+//           while (first >= end )
+//           {
+//               System.out.println(first);
+//               first--;
+//           }
+//       }
+//       else
+//       {
+//            while (end >= first)
+//            {
+//                System.out.println(end);
+//                end--;
+//            }
+//       }
+        System.out.print("Enter first: ");
         int first = scn.nextInt();
-        System.out.println("enter second");
+
+        System.out.print("Enter end: ");
         int end = scn.nextInt();
 
-       if (first > end )
-       {
-           while (first >= end )
-           {
-               System.out.println(first);
-               first--;
-           }
-       }
-       else
-       {
-            while (end >= first)
-            {
-                System.out.println(end);
-                end--;
+        // Always print from end to first
+        int i = end;
+
+        if (end > first) {
+            while (i >= first) {
+                System.out.println(i);
+                i--;
             }
-       }
+        } else {
+            while (i <= first) {
+                System.out.println(i);
+                i++;
+            }
+        }
     }
+
 }
+

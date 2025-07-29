@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// display the all num in reverse
+// display multiple of 9
 
 public class test_5
 {
