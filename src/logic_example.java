@@ -10,7 +10,7 @@ public class logic_example
         }
         else
         {
-            System.out.println("entry deni : ");
+            System.out.println(" entry deni ");
         }
         boolean a = true, b = false;
         System.out.println(a );
