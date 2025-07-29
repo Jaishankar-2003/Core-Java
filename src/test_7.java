@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+// fibonacii series
+
 public class test_7
 {
     public static void main (String[] args)

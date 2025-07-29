@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// display the all num in reverse
+// display sum of all even
 
 public class test_4
 {

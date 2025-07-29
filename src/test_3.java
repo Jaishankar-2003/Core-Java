@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// display the all num in reverse
+// display the even num
 
 public class test_3
 {

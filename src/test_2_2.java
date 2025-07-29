@@ -11,6 +11,7 @@ public class test_2_2
         int first = scn.nextInt();
         System.out.println("enter 2 num");
         int second = scn.nextInt();
+
         int i = second;
 
         if(second > first)
