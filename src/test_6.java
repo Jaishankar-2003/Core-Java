@@ -10,7 +10,7 @@ public class test_6
 
         System.out.println("enter first");
         int number = scn.nextInt();
-        System.out.println("enter second");
+       // System.out.println("enter second");
         int sum = 0;
         int i = 1;
 

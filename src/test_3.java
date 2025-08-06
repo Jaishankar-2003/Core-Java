@@ -12,7 +12,6 @@ public class test_3
         int first = scn.nextInt();
         System.out.println("enter second");
         int end = scn.nextInt();
-        int num = 0;
 
         if (first <= end)
         {
