@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class test_1
+public class while_multiple_12
 {
-    public static  void main (String[] args)
+    public static void main(String[] args)
     {
         Scanner scn = new Scanner(System.in);
 
@@ -11,12 +11,14 @@ public class test_1
         System.out.println("enter second");
         int second = scn.nextInt();
 
-        if(first > second)
+        int i = first;
+        while(i <= second)
         {
-            System.out.println("first is greater then second");
-        }
-        else
-        {   System.out.println("second is greater then first");
+            if(i % 12 == 0)
+            {
+                System.out.println(i);
+            }
+            i++;
         }
     }
 }
