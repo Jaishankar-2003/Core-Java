@@ -10,12 +10,12 @@ public class for_factorial
 
        // System.out.println("enter first");
        // int first = scn.nextInt();
-        System.out.println("enter second");
-        int second = scn.nextInt();
+        System.out.println("enter num");
+        int num = scn.nextInt();
         int sum = 0;
-        for(int i = 1 ; i <= second ; i++)
+        for(int i = 1 ; i <= num ; i++)
         {
-            if( second % i  == 0)
+            if( num % i  == 0)
             {
                 System.out.println(i);
             }
