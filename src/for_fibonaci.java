@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+/*
 public class for_fibonaci
 {
     public static void main (String[] args)
@@ -15,6 +16,34 @@ public class for_fibonaci
 
         System.out.println("The expected fibonacci number");
 
+        for(int i = 1 ; i <= length ; i++)
+        {
+
+            System.out.println(n1);
+            n1 = n2;
+            n2 = n3;
+            n3 = n1 + n2;
+        }
+    }
+}
+ */
+
+public class for_fibonaci
+{
+    public static void main (String[] args) {
+        Scanner scn = new Scanner(System.in);
+
+        System.out.println("enter length");
+        int length = scn.nextInt();
+
+        int n1 = 0;
+        int n2 = 1;
+        int n3 = n1 + n2;
+        display(length,n1,n2,n3);
+        System.out.println("The expected fibonacci number");
+    }
+    public static void display(int length , int n1 , int n2 , int n3)
+    {
         for(int i = 1 ; i <= length ; i++)
         {
 
