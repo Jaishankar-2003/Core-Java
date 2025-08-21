@@ -32,3 +32,4 @@ public class string_palindrome
         scn.close();
     }
 }
+
