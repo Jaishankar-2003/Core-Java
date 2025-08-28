@@ -12,6 +12,7 @@ public class cls_prime
             if(num % i == 0)
             {
                 count++;
+
             }
         }
         System.out.println("num =" + num);
