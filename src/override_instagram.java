@@ -1,7 +1,6 @@
 class Instagramv1
 {
-    public void login()
-    {
+    public void login() {
         System.out.println("login done");
     }
     public void reels()
