@@ -23,7 +23,7 @@ class project extends devices
 {
     public project(String colour)
     {
-        super("epsilon");   // PROGRAMMER CALL SUPER CLASS CONSTRUCTOR IN EXPLICIT WAY
+        super("epsilon");   // PROGRAMMER CALL SUPER CLASS CONSTRUCTOR IN EXPLICIT WAY [ because super class constructor have argument ]
         System.out.println(colour);
         System.out.println("Sub class constructor");
     }
