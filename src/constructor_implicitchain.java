@@ -1,3 +1,8 @@
+
+// ACCESS ONE CONSTRUCTOR FROM ANOTHER CONSTRUCTOR IN DIFFERENT CLASS
+// BUT IN INPLICIT SUPER CLASS DON'T HAVE ANY ARGUMENT SO IN SUBCLASS CONSTRUCTOR SUPER() AUTOMATICALLY CALLS
+
+
 class database
 {
     public database()
@@ -17,6 +22,7 @@ class mysql extends database
 {
     public mysql()
     {
+        //super(); // HERE JAVA CALL SUPER CLASS CONSTRUCTOR AUTOMATICALLY IN INPLICIT [ BECAUSE SUPER CLASS DON'T HAVE ANY ARGUMENT ]
         System.out.println("sub-class constructor");
     }
 }

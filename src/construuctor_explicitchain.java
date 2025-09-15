@@ -1,3 +1,8 @@
+
+// ACCESS ONE CONSTRUCTOR FROM ANOTHER CONSTRUCTOR IN DIFFERENT CLASS IN EXPLICIT WAY
+// SUPERCLASS CONSTRUCTOR HAVE ARGUMENT SO IN SUBCLASS CONSTRUCTOR SUPER("ARGUMENT") CALLS THE SUPERCLASS CONSTRUCTOR
+
+
 class devices
 {
     public devices(String brand)
@@ -18,7 +23,7 @@ class project extends devices
 {
     public project(String colour)
     {
-        super("epsilon");
+        super("epsilon");   // PROGRAMMER CALL SUPER CLASS CONSTRUCTOR IN EXPLICIT WAY
         System.out.println(colour);
         System.out.println("Sub class constructor");
     }
