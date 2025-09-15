@@ -23,11 +23,14 @@ class MainMethod
         Scanner scn = new Scanner(System.in);
         phoneUnlockFeature p1 = new phoneUnlockFeature();
         System.out.println("Enter the choice");
+        System.out.println("1. Swipe");
+        System.out.println("2. Pin");
+        System.out.println("3. Password");
         int choice = scn.nextInt();
         switch (choice)
         {
             case 1 : p1.unlock();
-            break;
+                     break;
 
             case 2 :  System.out.println("Enter pin");
                         int pin  = scn.nextInt();

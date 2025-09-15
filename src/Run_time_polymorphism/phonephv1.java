@@ -5,7 +5,7 @@ class phonephv1
 {
     public void paybills()
     {
-        System.out.println("you can pay only current bil");
+        System.out.println("you can pay only current bill");
     }
 }
 class phonephv2 extends phonephv1
@@ -31,18 +31,10 @@ class MainMethod
             {
                 v1.paybills();
             }
-            else
-            {
-                System.out.println("invalid choice");
-            }
             break;
             case 2 : if (choice == 2)
             {
                 v2.paybills();
-            }
-            else
-            {
-                System.out.println("invalid choice");
             }
             break;
 
