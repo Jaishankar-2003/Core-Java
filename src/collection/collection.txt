@@ -1,0 +1,83 @@
+Collection Interface in Java
+====================================
+
+Collection interface in Java is the root interface of the Java Collection Framework (JCF).
+
+It defines a group of objects known as elements and provides basic operations for working with them.
+
+The interface is part of the java.util package
+
+forms the foundation for most collection classes, including List, Set, and Queue.
+
+
+@@@@@@@
+Root interface of all standard collections.
+Not directly implemented. Instead, subclasses like ArrayList, HashSet, and LinkedList implement it
+
+
+Sub-Interfaces of Collection Interface
+-----------------------------------------
+1. List :
+
+List represents an ordered collection that allows duplicates.
+                            -----------------------------------
+Elements can be accessed by index.
+Implementing Classes: **** ArrayList, LinkedList, Vector, Stack. ****
+                           ======================================
+
+2. Set
+Set represents an unordered collection with no duplicate elements.
+                            -----------------------------------------
+Implementing Classes: *** HashSet, TreeSet, LinkedHashSet, EnumSet, CopyOnWriteArraySet. ***
+                        =================================================================
+
+3. SortedSet
+SortedSet extends Set and maintains elements in a sorted order.
+                  -----------------------------------------------
+Provides methods to handle range-based operations.
+Implementing Class: TreeSet.
+                   ==========
+
+4. NavigableSet
+NavigableSet extends SortedSet and provides navigation methods like lower(), floor(), ceiling(), and higher().
+                    ------------------------------------------------------------------------------------------
+Implementing Class: TreeSet.
+                    =========
+
+5. Queue
+
+Queue represents a collection following FIFO (First-In-First-Out) order.
+
+Implementing Classes: PriorityQueue, Deque, ArrayDeque, LinkedList
+                      =============================================
+
+5. Deque
+Deque extends Queueallows elements to be added/removed from both ends.
+              ----------------------------------------------==============
+Implementing Classes: ArrayDeque, LinkedList.
+                     ==========================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
