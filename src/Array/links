@@ -1,3 +1,44 @@
 https://media.geeksforgeeks.org/wp-content/uploads/two-d.png    -- 2d array representation
 
 https://media.geeksforgeeks.org/wp-content/uploads/3D-array.jpg   --3d array representation
+
+https://media.geeksforgeeks.org/wp-content/uploads/20250820121328755749/list.webp  -- List interface
+
+https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png   -- stack class
+
+ Regex, provide a powerful way to define string patterns for searching, validating,
+ and manipulating text in Java.
+
+ Pattern Class
+ The Pattern class compiles regex strings into pattern objects.
+
+ Key Methods:
+ compile(String regex): Compiles a regex.
+ matcher(CharSequence input): Creates a matcher to search a string.
+ matches(String regex, CharSequence input): Checks full-string match.
+ split(CharSequence input): Splits input based on the pattern.
+
+
+
+ Matcher Class
+ The Matcher class performs matching operations for input strings.
+
+ Key Methods:
+ find(): Searches for pattern occurrences.
+ start() / end(): Returns start and end indices of a match.
+ group() / groupCount(): Retrieves matched subsequences.
+ matches(): Checks if the entire input matches the pattern.
+
+
+ Common Regex Patterns in Java
+ . : Any character
+ \d : Digit [0-9]
+ \D : Non-digit
+ \s : Whitespace
+ \S : Non-whitespace
+ \w : Word character [a-zA-Z0-9_]
+ \W : Non-word character
+ \b : Word boundary
+ \B : Non-word boundary
+
+

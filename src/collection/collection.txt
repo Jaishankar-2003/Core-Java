@@ -57,6 +57,44 @@ Deque extends Queueallows elements to be added/removed from both ends.
 Implementing Classes: ArrayDeque, LinkedList.
                      ==========================
 
+================================================================================================================================
+Array List
+================
+
+1. ArrayList(): This constructor is used to build an empty array list.
+
+ArrayList<Integer> arr = new ArrayList<>();
+
+2. ArrayList(Collection c): This constructor is used to build an array list initialized with the elements from the collection c.
+
+ArrayList<String> arr = new ArrayList<>(collection);
+
+3. ArrayList(int capacity): This constructor is used to build an array list with the initial capacity being specified.
+
+ArrayList<Double> arr = new ArrayList<>(20);
+
+Advantages of Java ArrayList
+----------------------------------
+ 1 . Dynamic size
+ 2 . Easy to use
+ 3 . Fast access
+ 4 . Ordered collection
+ 5 . Supports null values
+
+
+ Linked List
+ --------------
+ LinkedList<String> l = new LinkedList<String>();
+
+ A linked list can dynamically grow or shrink in size as needed.
+ Adding or removing elements in the middle is efficient since only links need to be updated.
+ Doubly linked lists allow traversal in both forward and backward directions.
+
+
+=====================================================================================================================================
+
+
+
 
 
 
