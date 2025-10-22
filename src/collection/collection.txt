@@ -275,20 +275,61 @@ They are used for scheduling, buffering and producer-consumer applications.
 .remove() → serves the first person
 .peek() → shows who’s next without removing them
 
+====================
+    PriorityQueue
+====================
+
+        A PriorityQueue doesn’t care about who came first, it cares about who’s most important 🏅
+
+        queue automatically sorts (smallest = highest priority)
+        max priority  -- new PriorityQueue<>(Collections.reverseOrder());
+
+
+
+
+ PriorityQueue in Java is a queue where elements are ordered based on their priority,
+ rather than the order of insertion
+
+    Uses Heap Data Structure internally.
+
+    Implement min heap (minimum element has the top priority).
+    max heap by passing Collections.reverseOrder() while creating an object.
+
+    The size of the Priority Queue is dynamic, which means it increases or decreases as per the requirement.
+
+------------------------------------------------------------------------------------------------------------------------
+================
+    Deque
+================
+
+ArrayDeque = Array + Queue hybrid — super fast, can act like:
+
+Queue (FIFO)
+Stack (LIFO)
+
+✅ You can insert/remove from both sides — that’s why it’s called Deque (Double-Ended Queue)
+
+
+| Type                   | Behavior                 | Maintains Order          | Allows Duplicates | Use Case                            |
+| ---------------------- | ------------------------ | ------------------------ | ----------------- | ----------------------------------- |
+| **Queue (LinkedList)** | FIFO                     | ✅ Yes                    | ✅ Yes             | Ticket lines, waiting queues        |
+| **PriorityQueue**      | Based on priority        | ⚙️ Depends on comparator | ✅ Yes             | Task scheduling, CPU processes      |
+| **ArrayDeque**         | Double-ended (FIFO/LIFO) | ✅ Yes                    | ✅ Yes             | Stack/Queue hybrid, fast operations |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
