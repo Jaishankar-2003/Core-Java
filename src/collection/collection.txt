@@ -167,8 +167,13 @@ You need sorted order → use TreeSet
 LinkedHashSet
 ====================
 
+                LinkedHashSet<String> cities = new LinkedHashSet<>();  //✅ Maintained the same order as you inserted
+
 It combines the functionality of a HashSet with a LinkedList to maintain the insertion order of elements.
    -----------------------------------------------------------  -----------------------
+
+Hash table (for fast lookups)
+Linked list (for maintaining insertion order)
 
 Stores unique elements only.
 Maintains insertion order.
@@ -187,6 +192,20 @@ It inherits most methods from HashSet, AbstractSet, AbstractCollection and Set i
 Methods like stream(), parallelStream() are useful for working with Java Streams.
 retainAll() and removeAll() are useful for performing set operations (intersection and difference).
 ----------------------------------------------------------------------------------------------------
+
+  | Feature         | HashSet                             | LinkedHashSet                                 |
+  | --------------- | ----------------------------------- | --------------------------------------------- |
+  | **Order**       | Unordered (random)                  | Maintains insertion order                     |
+  | **Duplicates**  | Not allowed                         | Not allowed                                   |
+  | **Performance** | Slightly faster                     | Slightly slower (due to linked list overhead) |
+  | **When to use** | When you only care about uniqueness | When you need uniqueness + order              |
+
+
+| Scenario                                                     | Use             |
+| ------------------------------------------------------------ | --------------- |
+| You just want unique items, order doesn’t matter             | `HashSet`       |
+| You want unique items *and* to remember the order of arrival | `LinkedHashSet` |
+| You want unique items *and* sorted order (A–Z or 1–N)        | `TreeSet`       |
 
 
 
