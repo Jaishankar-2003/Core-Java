@@ -130,6 +130,10 @@ Example: Queues, playlists, undo-history, task scheduling.
 Sets represent collections of unique elements, disallowing duplicates.
 They provide implementations with different ordering strategies like hashing, insertion order or sorting.
 
+Insertion order → order you inserted elements
+Sorted order → order based on value comparison (A–Z, 1–N)
+Random order → order doesn’t matter at all
+
 ============================================================================================
 HASH SET    --fast for add/search/remove operations — all happen in roughly O(1) time.
 =============
@@ -175,6 +179,10 @@ It combines the functionality of a HashSet with a LinkedList to maintain the ins
 Hash table (for fast lookups)
 Linked list (for maintaining insertion order)
 
+Insertion order means:
+The order in which you add (insert) elements into a collection is the same order in which they’ll come out when you iterate or print them.
+
+
 Stores unique elements only.
 Maintains insertion order.
 Provides faster iteration compared to HashSet.
@@ -200,12 +208,80 @@ retainAll() and removeAll() are useful for performing set operations (intersecti
   | **Performance** | Slightly faster                     | Slightly slower (due to linked list overhead) |
   | **When to use** | When you only care about uniqueness | When you need uniqueness + order              |
 
+⚙️ When to Use What :
 
 | Scenario                                                     | Use             |
 | ------------------------------------------------------------ | --------------- |
 | You just want unique items, order doesn’t matter             | `HashSet`       |
 | You want unique items *and* to remember the order of arrival | `LinkedHashSet` |
 | You want unique items *and* sorted order (A–Z or 1–N)        | `TreeSet`       |
+------------------------------------------------------------------------------------------------------------------------------
+===============
+Tree Set
+===============
+
+A TreeSet is a collection class that stores unique elements in a sorted order.
+part of java.util package that implements the SortedSet interface,
+internally uses a Red-Black tree to maintain sorting
+
+TreeSet does not allow duplicate elements; duplicate insertions are ignored.
+TreeSet does not allow null values; inserting null throws a NullPointerException.
+Implements the NavigableSet interface and provides navigation methods like higher(), lower(), ceiling() and floor().
+Not thread-safe; for concurrent access, it must be synchronized using
+
+| Feature                | HashSet         | LinkedHashSet                | TreeSet              |
+| ---------------------- | --------------- | ---------------------------- | -------------------- |
+| **Order**              | Random          | Insertion order              | Sorted order         |
+| **Duplicates**         | ❌               | ❌                            | ❌                    |
+| **Null Allowed**       | ✅ (1 null)      | ✅ (1 null)                   | ❌                    |
+| **Speed (add/search)** | Fastest         | Fast                         | Slower (log n)       |
+| **Best Use Case**      | Just uniqueness | Uniqueness + insertion order | Uniqueness + sorting |
+
+------------------------------------------------------------------------------------------------------------------------
+
+==============
+    Queue / Deque Implementations
+==============
+
+In Java, a Queue is not a class — it’s an interface that defines behavior.
+We can’t create a Queue object directly — we use classes that implement it, like:
+
+LinkedList
+PriorityQueue
+ArrayDeque
+
+Queues store elements in a FIFO manner,
+while Deques allow operations at both ends.
+They are used for scheduling, buffering and producer-consumer applications.
+
+    | Implementation            | Description                                        |
+    | ------------------------- | -------------------------------------------------- |
+    | **LinkedList**            | Common, simple queue implementation                |
+    | **PriorityQueue**         | Elements ordered by priority (not insertion order) |
+    | **ArrayDeque**            | Faster alternative to LinkedList                   |
+    | **ConcurrentLinkedQueue** | Thread-safe version for concurrency                |
+
+
+    | Method      | Description                                             |
+    | ----------- | ------------------------------------------------------- |
+    | `add(e)`    | Add element (throws error if full)                      |
+    | `offer(e)`  | Add element (returns false if full, safer)              |
+    | `remove()`  | Removes and returns head (throws error if empty)        |
+    | `poll()`    | Removes and returns head (returns null if empty, safer) |
+    | `peek()`    | Returns head without removing (null if empty)           |
+    | `element()` | Returns head without removing (throws error if empty)   |
+
+.add() → puts person in line
+.remove() → serves the first person
+.peek() → shows who’s next without removing them
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 
