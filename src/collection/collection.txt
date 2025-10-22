@@ -17,7 +17,7 @@ Not directly implemented. Instead, subclasses like ArrayList, HashSet, and Linke
 
 Sub-Interfaces of Collection Interface
 -----------------------------------------
-1. List :
+1. List :  allow duplicates
 
 List represents an ordered collection that allows duplicates.
                             -----------------------------------
@@ -25,13 +25,15 @@ Elements can be accessed by index.
 Implementing Classes: **** ArrayList, LinkedList, Vector, Stack. ****
                            ======================================
 
-2. Set
+2. Set : no duplicates allowed
+
 Set represents an unordered collection with no duplicate elements.
                             -----------------------------------------
 Implementing Classes: *** HashSet, TreeSet, LinkedHashSet, EnumSet, CopyOnWriteArraySet. ***
                         =================================================================
 
-3. SortedSet
+3. SortedSet :  set & maintail element sorted order
+
 SortedSet extends Set and maintains elements in a sorted order.
                   -----------------------------------------------
 Provides methods to handle range-based operations.
@@ -39,19 +41,21 @@ Implementing Class: TreeSet.
                    ==========
 
 4. NavigableSet
+
 NavigableSet extends SortedSet and provides navigation methods like lower(), floor(), ceiling(), and higher().
                     ------------------------------------------------------------------------------------------
 Implementing Class: TreeSet.
                     =========
 
-5. Queue
+5. Queue : FIFO
 
 Queue represents a collection following FIFO (First-In-First-Out) order.
 
 Implementing Classes: PriorityQueue, Deque, ArrayDeque, LinkedList
                       =============================================
 
-5. Deque
+5. Deque  :  Add / Remove in both ends
+
 Deque extends Queueallows elements to be added/removed from both ends.
               ----------------------------------------------==============
 Implementing Classes: ArrayDeque, LinkedList.
@@ -81,17 +85,120 @@ Advantages of Java ArrayList
  4 . Ordered collection
  5 . Supports null values
 
+ When to use ArrayList
+ -----------------------------
+ When you mostly read data (not insert/delete frequently).
+ Example: Store users fetched from DB, API responses, dropdown lists,
+
+--------------------------------------------------------------------------------------------------
 
  Linked List
- --------------
+ ===============
+
  LinkedList<String> l = new LinkedList<String>();
+
+ Advantages
+ ---------------
 
  A linked list can dynamically grow or shrink in size as needed.
  Adding or removing elements in the middle is efficient since only links need to be updated.
  Doubly linked lists allow traversal in both forward and backward directions.
 
+When to use LinkedList
+---------------------------------
+
+When you add/remove items frequently (especially at beginning or middle).
+Example: Queues, playlists, undo-history, task scheduling.
+
+
+
+ --------------------------------------------------------------------------------------------------------------
+| Concept                     | **ArrayList**                      | **LinkedList**                                                        |
+| --------------------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| **Storage Type**            | Uses **dynamic array** internally. | Uses **doubly linked nodes** (each node stores `data + next + prev`). |
+| **Best For**                | Fast random access (get by index). | Fast insertion/deletion in the middle.                                |
+| **Access Speed (get)**      | ✅ Very fast (O(1))                 | ❌ Slow (O(n))                                                         |
+| **Insert/Delete at end**    | ✅ Fast (amortized O(1))            | ✅ Fast (O(1))                                                         |
+| **Insert/Delete in middle** | ❌ Slow (O(n))                      | ✅ Faster (O(1) after reaching node)                                   |
+| **Memory usage**            | Less (just array + values)         | More (extra pointers for next/prev)                                   |
+-----------------------------------------------------------------------------------------------------------------
 
 =====================================================================================================================================
+                                        SET IMPLEMENTATION
+=====================================================================================================
+
+Sets represent collections of unique elements, disallowing duplicates.
+They provide implementations with different ordering strategies like hashing, insertion order or sorting.
+
+============================================================================================
+HASH SET    --fast for add/search/remove operations — all happen in roughly O(1) time.
+=============
+
+        HashSet<String> userIDs = new HashSet<>();
+
+It is used to store the unique elements and it doesn't maintain any specific order of elements.
+Can store the Null values.
+HashSet is not thread-safe. To make it thread-safe, synchronization is needed externally.
+
+Uses HashMap (implementation of hash table data structure) internally.
+Also implements Serializable and Cloneable interfaces.
+
+| Feature                       | Description                                |
+| ----------------------------- | ------------------------------------------ |
+| **Duplicates**                | Not allowed                                |
+| **Order**                     | Unordered (insertion order not maintained) |
+| **Null**                      | Allows only one `null` element             |
+| **Underlying Data Structure** | HashMap                                    |
+| **Performance**               | Fast because of hashing                    |
+
+⚠️ When to Use HashSet
+
+✅ When you want only unique data
+✅ When order doesn’t matter
+✅ When you want fast lookup or removal
+
+🚫 Don’t use it when:
+
+You need elements in a specific order → use LinkedHashSet
+
+You need sorted order → use TreeSet
+---------------------------------------------------------------------------------------------------
+===================
+LinkedHashSet
+====================
+
+It combines the functionality of a HashSet with a LinkedList to maintain the insertion order of elements.
+   -----------------------------------------------------------  -----------------------
+
+Stores unique elements only.
+Maintains insertion order.
+Provides faster iteration compared to HashSet.
+Allows null elements.
+
+Advantages of LinkedHashSet
+It maintains insertion order.
+It allows quick insertion, deletion and lookup of elements.
+It is useful for caching applications where insertion order is important.
+
+-----------------------------------------------------------------------------------------------
+Notes:
+LinkedHashSet extends HashSet and maintains insertion order.
+It inherits most methods from HashSet, AbstractSet, AbstractCollection and Set interface.
+Methods like stream(), parallelStream() are useful for working with Java Streams.
+retainAll() and removeAll() are useful for performing set operations (intersection and difference).
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+=============================================================================================
 
 
 
