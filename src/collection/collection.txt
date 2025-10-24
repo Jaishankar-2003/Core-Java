@@ -334,6 +334,11 @@ Stack (LIFO)
             | **ConcurrentHashMap** | Thread-safe HashMap for multi-threading |
             | **HashTable**         | Legacy version of synchronized HashMap  |
 
+================
+    Hash map
+================
+
+                HashMap<String, Integer> hashMap = new HashMap<>();
 
     Maps store data & element in key-value pairs where keys are unique.
     Different implementations provide hashing, ordering, reference-based and concurrent behaviors.
@@ -366,11 +371,52 @@ Stack (LIFO)
        | **containsKey(k)**                   | Check if key exists                            |
        | **entrySet() / keySet() / values()** | Iterate through map                            |
 
+==============
+LinkedHashMap
+==============
+
+It stores key-value pairs while maintaining the insertion order of the entries
+
+        Stores unique key-value pairs.
+        Maintains insertion order.
+        Allows one null key and multiple null values.
+        Fast performance for basic operations.
+
+
+    HashMap provided the advantage of quick insertion, search, and deletion but
+    it never maintained the track and order of insertion,
+    which the LinkedHashMap provides where the elements can be accessed in their insertion order.
+
+| Feature         | `HashMap`               | `LinkedHashMap`                          |
+| --------------- | ----------------------- | ---------------------------------------- |
+| **Order**       | Unordered (random)      | Maintains insertion order                |
+| **Performance** | Fast                    | Slightly slower (because of linked list) |
+| **Use Case**    | General-purpose lookups | Caches, predictable iteration            |
 
 
 
+        | Situation                                          | Use                                     |
+        | -------------------------------------------------- | --------------------------------------- |
+        | Need fast lookup, single thread                    | `HashMap`                               |
+        | Need predictable order (cache, recent items)       | `LinkedHashMap`                         |
+        | Multi-threaded app / high concurrency              | `ConcurrentHashMap`                     |
+        | Don’t care about order, but want safe reads/writes | `ConcurrentHashMap`                     |
+        | Building LRU or in-memory cache                    | `LinkedHashMap` with `accessOrder=true` |
 
-=============================================================================================
+
+    | Feature            | HashMap           | LinkedHashMap                    | ConcurrentHashMap             |
+    | ------------------ | ----------------- | -------------------------------- | ----------------------------- |
+    | Order              | ❌ None            | ✅ Maintains order                | ❌ None                        |
+    | Thread-safe        | ❌                 | ❌                                | ✅                             |
+    | Nulls allowed      | ✅                 | ✅                                | ❌                             |
+    | Collision handling | LinkedList → Tree | LinkedList → Tree + linked order | LinkedList → Tree (CAS locks) |
+    | Use Case           | General map       | Ordered map / Cache              | Concurrent data structure     |
+
+
+========================================================================================================================================
+
+
+
 
 
 
