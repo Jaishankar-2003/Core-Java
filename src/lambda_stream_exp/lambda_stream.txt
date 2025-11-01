@@ -1,0 +1,98 @@
+
+Java Lambda Expressions
+
+
+        "Java Streams and Lambda Expressions simplify data processing by enabling functional-style operations on collections."
+
+        🧠 First — What are Lambdas?
+        ===================================
+        Lambda expressions in Java are basically shortcuts for writing methods inline.
+        Instead of writing full anonymous classes, you can just write the logic directly.
+
+
+        normal way:
+        -----------------
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+        for (Integer n : nums) {
+            System.out.println(n);
+        }
+
+        lambda:
+        -----------------
+        nums.forEach(n -> System.out.println(n));
+
+
+        🚀 Then — What are Streams?
+        =================================
+        Streams are a new way (since Java 8) to process data from collections (like List, Set, etc.) in a functional way.
+
+        Think of them like a pipeline:
+        You take data → perform operations (filter, map, sort, collect) → get the final result.
+
+
+        normal way:
+        ----------------
+        List<Integer> even = new ArrayList<>();
+        for (Integer n : nums)
+        {
+            if (n % 2 == 0) {
+
+                even.add(n);
+            }
+        }
+        System.out.println(even);
+
+
+        stream way:
+        --------------------
+
+        List<Integer> even = nums.stream()
+                                 .filter(n -> n % 2 == 0)
+                                 .collect(Collectors.toList());
+        System.out.println(even);
+
+        nums.stream() → converts list into a stream (data pipeline)
+        .filter(n -> n % 2 == 0) → filters out only even numbers using lambda
+        .collect(Collectors.toList()) → converts the result back into a List
+
+--------------------------------------------------------------------------------------------------------------------------
+      | Concept       | Purpose                           | Example                                           |
+      | ------------- | --------------------------------- | ------------------------------------------------- |
+      | **Lambda**    | Short way to define functions     | `n -> n * 2`                                      |
+      | **Stream**    | Pipeline for data processing      | `list.stream().filter(...).map(...).collect(...)` |
+      | **filter()**  | Select items matching a condition | `.filter(x -> x > 10)`                            |
+      | **map()**     | Transform elements                | `.map(x -> x * 2)`                                |
+      | **forEach()** | Loop over elements                | `.forEach(System.out::println)`                   |
+      | **reduce()**  | Combine into one result           | `.reduce(0, (a,b) -> a+b)`                        |
+-------------------------------------------------------------------------------------------------------------------------
+
+| Method        | What It Does              | Example                         | Equivalent Concept |
+| ------------- | ------------------------- | ------------------------------- | ------------------ |
+| **filter()**  | Keeps only matching items | `.filter(x -> x > 10)`          | `if` condition     |
+| **map()**     | Transforms data           | `.map(x -> x * 2)`              | modify list        |
+| **forEach()** | Loops through all items   | `.forEach(System.out::println)` | `for` loop         |
+| **reduce()**  | Combines everything       | `.reduce(0, (a,b)->a+b)`        | accumulator/sum    |
+
+
+       .filter() → Select what you want
+       Purpose: Pick only the elements that match a condition
+
+       .map() → Transform your data
+       Purpose: Change each element into something else (modify, convert, or extract data)
+
+       3️⃣ .forEach() → Do something with each element
+       Purpose: Just loop through the elements (like printing or performing actions
+
+       4️⃣ .reduce() → Combine everything into one
+       Purpose: Merge all elements into a single result (sum, product, string join, etc.)
+
+
+
+
+
+       Lambda Expressions implement the only abstract function and therefore implement functional interfaces.
+
+        Functional Interfaces: A functional interface is an interface that contains only one abstract method.
+        Code as Data: Treat functionality as a method argument.
+        Class Independence: Create functions without defining a class.
+        Pass and Execute: Pass lambda expressions as objects and execute on demand.
